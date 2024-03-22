@@ -1,0 +1,14 @@
+# Use the official MySQL image as the base image
+FROM mysql:8.0
+
+# Set environment variables
+ENV MYSQL_DATABASE=mydatabase \
+    MYSQL_ROOT_PASSWORD=mysecret \
+    MYSQL_USER=myuser \
+    MYSQL_PASSWORD=mypassword
+
+# Optionally, copy a custom configuration file
+# COPY my-custom.cnf /etc/mysql/conf.d/
+
+# Copy initial SQL scripts
+# COPY ./scripts/ /docker-entrypoint-initdb.d/
