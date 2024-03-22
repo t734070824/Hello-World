@@ -1,3 +1,8 @@
-FROM redis:6.2.6
-#指定容器启动时执行的命令
+# Use the official Redis image from Docker Hub as the base image
+FROM redis:latest
 
+# Copy your custom redis.conf file into the container
+COPY redis.conf /usr/local/etc/redis/redis.conf
+
+# Command to run when starting the container
+CMD ["redis-server", "/usr/local/etc/redis/redis.conf"]
